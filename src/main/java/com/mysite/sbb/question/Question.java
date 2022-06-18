@@ -27,6 +27,7 @@ public class Question {
 
     // 테이블의 실제 칼럼명은 create_date(스네이크 케이스)로 된다.
     private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;

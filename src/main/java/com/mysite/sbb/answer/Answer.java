@@ -20,7 +20,7 @@ public class Answer {
     private String content;
 
     private LocalDateTime createDate;
-
+    private LocalDateTime modifyDate;
     /*
     question 속성은 답변 엔티티에서 질문 엔티티를 참조하기 위해 추가했다.
     예를 들어 답변 객체(예:answer)를 통해 질문 객체의 제목을 알고 싶다면 answer.getQuestion().getSubject()처럼 접근할 수 있다.

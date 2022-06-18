@@ -17,11 +17,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 /*
     스프링시큐리티를 적용하면 CSRF 기능이 동작하기 때문
     CSRF(cross site request forgery)는 웹 사이트 취약점 공격을 방지를 위해 사용하는 기술이다.
     스프링 시큐리티가 CSRF 토큰 값을 세션을 통해 발행하고 웹 페이지에서는 폼 전송시에 해당 토큰을 함께 전송하여 실제 웹 페이지에서 작성된 데이터가 전달되는지를 검증하는 기술이다.
+ */
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+/*
+    Controller에서 적용한 PreAuthorize 기능을 사용하려면 prePostEnabled가 true여야 한다.
  */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserSecurityService userSecurityService;
