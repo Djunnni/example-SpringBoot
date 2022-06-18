@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -31,4 +32,9 @@ public class Answer {
 
     @ManyToOne
     private SiteUser author;
+
+    // ManyToMany로 관리할 경우에는 새로운 테이블들이 생성된다.
+    // 다대다(N:N) 관계로 가기위해 서로 연관된 엔티티의 고유번호(id)가 들어간다.
+    @ManyToMany
+    Set<SiteUser> voter;
 }
